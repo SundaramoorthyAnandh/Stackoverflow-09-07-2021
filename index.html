@@ -1,0 +1,30 @@
+<html>
+<!-- https://stackoverflow.com/questions/69082073/javascript-use-the-return-number-of-a-function-to-calculate-the-total/69082390#69082390 -->
+
+<head>
+  <script>
+    function adult(input) {
+      let a = input;
+      let t = a * 100;
+      document.getElementById('asub').innerHTML = a * 100;
+      document.getElementById('tprice').innerHTML = a;
+      return t;
+  }
+
+  function total(event) {
+    let a = adult(event.target.value);
+    document.getElementById('tprice').innerHTML = a;
+  }
+  </script>
+</head>
+
+<body>
+  <input type="number" id="adulte" name="adulte" style="width: 40px" onchange="total(event)" min=0 />
+  <span id="aprice"> 100</span>$/unit
+  <p>Hébergements pour les adultes = <span id="asub">100</span>$</p>
+
+  <button id="total" name="total" onclick="total();">calculate</button>
+  <span id="tprice"></span>
+</body>
+
+</html>
